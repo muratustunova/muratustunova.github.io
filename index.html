@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spline Viewer Example</title>
     <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.486/build/spline-viewer.js"></script>
+    <style>
+        /* Genel stil kuralları */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        spline-viewer {
+            width: 100%; /* Spline viewer'ı ekranın genişliğine sığacak şekilde ayarla */
+        }
+
+        /* Mobil cihazlar için medya sorgusu */
+        @media (max-width: 768px) {
+            /* Ekran genişliği 768 pikselden küçükse, aşağıdaki stil kuralları uygulanır */
+            body {
+                font-size: 16px; /* Metin boyutunu artırabilirsiniz */
+            }
+            spline-viewer {
+                width: 100%; /* Spline viewer'ı ekranın genişliğine sığacak şekilde ayarla */
+            }
+        }
+    </style>
 </head>
 <body>
     <spline-viewer url="https://prod.spline.design/iWdISso2bDNqSSVw/scene.splinecode"></spline-viewer>
