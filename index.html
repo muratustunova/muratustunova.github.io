@@ -14,26 +14,17 @@
             background-color: #f0f0f0; /* Arka plan rengini belirleyebilirsiniz */
             display: flex;
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
             height: 100vh; /* Sayfa yüksekliğini ekranın yüksekliği kadar yapar */
         }
         spline-viewer {
-            flex-grow: 1; /* Spline viewer'ı ekranın geri kalan alanını dolduracak şekilde genişletir */
+            transform: scale(0.7); /* Görüntüyü daha fazla küçültmek için "scale" değerini ayarlar */
+            max-width: 100%; /* Ekranın genişliğine sığacak şekilde ayarla */
+            max-height: 100%; /* Ekranın yüksekliğine sığacak şekilde ayarla */
         }
 
-        /* Yatay (landscape) ekran görünümü için stil kuralları */
-        @media (max-width: 768px) and (orientation: landscape) {
-            body {
-                transform: rotate(90deg) scale(0.8); /* Sayfayı 90 derece döndürür ve görüntüyü daha fazla küçültür */
-                transform-origin: left top; /* Dönme noktasını sol üst köşeye ayarlar */
-                width: 100vh; /* Sayfanın yüksekliğini ekranın genişliği kadar yapar */
-                height: 100vw; /* Sayfanın genişliğini ekranın yüksekliği kadar yapar */
-                position: fixed; /* Sayfanın sabit bir konumda kalmasını sağlar */
-                left: 0; /* Sayfanın sol üst köşeye yerleşmesini sağlar */
-                top: 0;
-            }
-        }
-
-        /* Mobil cihazlar için medya sorgusu */
+        /* Mobil cihazlar için metya sorgusu */
         @media (max-width: 768px) {
             /* Ekran genişliği 768 pikselden küçükse, aşağıdaki stil kuralları uygulanır */
             body {
