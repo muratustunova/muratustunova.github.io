@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -58,6 +58,55 @@
 <body>
     <div id="spline-container">
         <spline-viewer url="https://prod.spline.design/iWdISso2bDNqSSVw/scene.splinecode"></spline-viewer>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murat Üstünova</title>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.486/build/spline-viewer.js"></script>
+    <style>
+        /* Genel stil kuralları */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Arka plan rengini belirleyebilirsiniz */
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Sayfa yüksekliğini ekranın yüksekliği kadar yapar */
+        }
+        #spline-container {
+            flex-grow: 1;
+            position: relative;
+        }
+        #custom-overlay {
+            position: absolute;
+            bottom: 1%; /* Alt kenardan uzaklığı yüzde (%) olarak ayarlayabilirsiniz */
+            right: 1%; /* Sağ kenardan uzaklığı yüzde (%) olarak ayarlayabilirsiniz */
+            width: 200px; /* Genişliği ayarlayabilirsiniz */
+            height: 60px; /* Yüksekliği ayarlayabilirsiniz */
+            background-color: white; /* Beyaz arka plan rengi */
+            z-index: 2;
+            border-radius: 15px; /* Çerçeve yumuşatma için değeri ayarlayabilirsiniz */
+        }
+
+        /* Diğer stiller buraya eklenebilir */
+
+        /* "logo" id'sine sahip butonları gizleme stil kuralları */
+        #logo {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="spline-container">
+        <spline-viewer url="https://prod.spline.design/iWdISso2bDNqSSVw/scene.splinecode"></spline-viewer>
+        <div id="custom-overlay"></div>
     </div>
 </body>
 </html>
