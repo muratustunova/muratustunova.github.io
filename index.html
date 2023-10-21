@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,45 +12,79 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0; /* Arka plan rengini belirleyebilirsiniz */
+            background-color: #f0f0f0;
+            /* Arka plan rengini belirleyebilirsiniz */
             display: flex;
             flex-direction: column;
-            height: 100vh; /* Sayfa yüksekliğini ekranın yüksekliği kadar yapar */
+            height: 100vh;
+            /* Sayfa yüksekliğini ekranın yüksekliği kadar yapar */
         }
+
         #spline-container {
             flex-grow: 1;
-            background-color: white; /* Alt kısmı beyaz yapar */
+            background-color: white;
+            /* Alt kısmı beyaz yapar */
         }
 
         /* Yatay (landscape) ekran görünümü için stil kuralları */
         @media (max-width: 768px) and (orientation: landscape) {
             body {
-                transform: rotate(90deg); /* Sayfayı 90 derece döndürür */
-                transform-origin: left top; /* Dönme noktasını sol üst köşeye ayarlar */
-                width: 100vh; /* Sayfanın yüksekliğini ekranın genişliği kadar yapar */
-                height: 100vw; /* Sayfanın genişliğini ekranın yüksekliği kadar yapar */
-                position: fixed; /* Sayfanın sabit bir konumda kalmasını sağlar */
-                left: 0; /* Sayfanın sol üst köşeye yerleşmesini sağlar */
+                transform: rotate(90deg);
+                /* Sayfayı 90 derece döndürür */
+                transform-origin: left top;
+                /* Dönme noktasını sol üst köşeye ayarlar */
+                width: 100vh;
+                /* Sayfanın yüksekliğini ekranın genişliği kadar yapar */
+                height: 100vw;
+                /* Sayfanın genişliğini ekranın yüksekliği kadar yapar */
+                position: fixed;
+                /* Sayfanın sabit bir konumda kalmasını sağlar */
+                left: 0;
+                /* Sayfanın sol üst köşeye yerleşmesini sağlar */
                 top: 0;
             }
+
             #spline-container {
-                width: 100%; /* Spline viewer'ı ekranın tamamına sığdırmak için genişlik ayarı ekler */
-                height: 100%; /* Spline viewer'ı ekranın tamamına sığdırmak için yükseklik ayarı ekler */
+                width: 100%;
+                /* Spline viewer'ı ekranın tamamına sığdırmak için genişlik ayarı ekler */
+                height: 100%;
+                /* Spline viewer'ı ekranın tamamına sığdırmak için yükseklik ayarı ekler */
+            }
+
+            #custom-overlay {
+                position: absolute;
+                bottom: 1%;
+                /* Alt kenardan uzaklığı yüzde (%) olarak ayarlayabilirsiniz */
+                right: 1%;
+                /* Sağ kenardan uzaklığı yüzde (%) olarak ayarlayabilirsiniz */
+                width: 200px;
+                /* Genişliği ayarlayabilirsiniz */
+                height: 60px;
+                /* Yüksekliği ayarlayabilirsiniz */
+                background-color: white;
+                /* Beyaz arka plan rengi */
+                z-index: 2;
+                border-radius: 15px;
+                /* Çerçeve yumuşatma için değeri ayarlayabilirsiniz */
             }
         }
 
         /* Mobil cihazlar için metya sorgusu */
         @media (max-width: 768px) {
+
             /* Ekran genişliği 768 pikselden küçükse, aşağıdaki stil kuralları uygulanır */
             body {
-                font-size: 16px; /* Metin boyutunu artırabilirsiniz */
+                font-size: 16px;
+                /* Metin boyutunu artırabilirsiniz */
             }
         }
 
         /* Hareket butonlarını daha da küçültmek için stil kuralları */
         .spline-viewer-controls button {
-            font-size: 10px; /* Butonların metin boyutunu daha da küçültürsünüz */
-            padding: 3px 6px; /* Butonların yüksekliği ve genişliğini daha da azaltabilirsiniz */
+            font-size: 10px;
+            /* Butonların metin boyutunu daha da küçültürsünüz */
+            padding: 3px 6px;
+            /* Butonların yüksekliği ve genişliğini daha da azaltabilirsiniz */
         }
 
         /* "logo" id'sine sahip butonları gizleme stil kuralları */
@@ -58,9 +93,11 @@
         }
     </style>
 </head>
+
 <body>
     <div id="spline-container">
         <spline-viewer url="https://prod.spline.design/iWdISso2bDNqSSVw/scene.splinecode"></spline-viewer>
     </div>
 </body>
+
 </html>
