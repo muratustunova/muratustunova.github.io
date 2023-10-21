@@ -30,6 +30,16 @@
             background-color: rgb(0, 0, 0); /* Beyaz arka plan rengi */
             z-index: 2;
             border-radius: 15px; /* Çerçeve yumuşatma için değeri ayarlayabilirsiniz */
+            display: flex;
+            justify-content: center; /* Metni yatayda ortalar */
+            align-items: center; /* Metni dikeyde ortalar */
+        }
+
+        /* Siyah arka plan üzerine eklenen metin için stil kuralları */
+        #custom-overlay::before {
+            content: "ASD"; /* Metin içeriği */
+            color: white; /* Metin rengi */
+            font-size: 24px; /* Metin boyutu */
         }
 
         /* Yatay (landscape) ekran görünümü için stil kuralları */
@@ -67,6 +77,3 @@
     </div>
 </body>
 </html>
-
-
-
