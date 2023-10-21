@@ -19,13 +19,16 @@
             min-height: 100vh;
         }
         .container {
-            max-width: 100%;
-            max-height: 100vh;
-            overflow: hidden;
+            width: 100vw; /* Ekran genişliği kadar */
+            height: 100vh; /* Ekran yüksekliği kadar */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* Taşan içeriği gizler */
         }
         spline-viewer {
-            width: 100%;
-            height: 100%;
+            width: 100%; /* Tam genişlik */
+            height: 100%; /* Tam yükseklik */
         }
 
         /* Mobil cihazlar için medya sorgusu */
@@ -42,9 +45,10 @@
     </div>
 
     <script>
-        // Spline görüntüleyiciyi istediğiniz gibi boyutlandırmak için JavaScript kullanabilirsiniz
+        // Spline görüntüleyiciyi yatay ve dikey olarak tam ekran olarak ölçekleyin
         const viewer = document.querySelector('spline-viewer');
-        viewer.style.transform = 'scale(0.7)';
+        const container = document.querySelector('.container');
+        viewer.style.transform = `scale(${Math.min(container.clientWidth / viewer.clientWidth, container.clientHeight / viewer.clientHeight)})`;
     </script>
 </body>
 </html>
