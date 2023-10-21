@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spline Viewer Example</title>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.486/build/spline-viewer.js"></script>
     <style>
         /* Genel stil kuralları */
         body {
@@ -17,24 +18,22 @@
             justify-content: center;
             height: 100vh; /* Sayfa yüksekliğini ekranın yüksekliği kadar yapar */
         }
-        .spline-container {
-            transform: scale(1.0); /* Görüntüyü daha fazla küçültmek için "scale" değerini ayarlar */
+        spline-viewer {
+            transform: scale(0.7); /* Görüntüyü daha fazla küçültmek için "scale" değerini ayarlar */
             max-width: 100%; /* Ekranın genişliğine sığacak şekilde ayarla */
             max-height: 100%; /* Ekranın yüksekliğine sığacak şekilde ayarla */
         }
 
-        /* Mobil cihazlar için medya sorgusu */
+        /* Mobil cihazlar için metya sorgusu */
         @media (max-width: 768px) {
             /* Ekran genişliği 768 pikselden küçükse, aşağıdaki stil kuralları uygulanır */
-            .spline-container {
-                transform: scale(1.5); /* Görüntüyü mobil cihazlarda büyütmek için "scale" değerini ayarlar */
+            body {
+                font-size: 16px; /* Metin boyutunu artırabilirsiniz */
             }
         }
     </style>
 </head>
 <body>
-    <div class="spline-container">
-        <spline-viewer url="https://prod.spline.design/iWdISso2bDNqSSVw/scene.splinecode"></spline-viewer>
-    </div>
+    <spline-viewer url="https://prod.spline.design/iWdISso2bDNqSSVw/scene.splinecode"></spline-viewer>
 </body>
 </html>
