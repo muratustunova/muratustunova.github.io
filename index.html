@@ -11,11 +11,17 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
             background-color: #f0f0f0; /* Arka plan rengini belirleyebilirsiniz */
         }
         spline-viewer {
-            max-width: 100%; /* Spline viewer'ı ekranın genişliğine sığacak şekilde ayarla */
-            margin: 10px; /* Kenar boşluklarını ayarlayabilirsiniz */
+            width: 100%;
+            max-width: 100%;
+            height: auto;
         }
 
         /* Mobil cihazlar için medya sorgusu (iPhone 13 gibi) */
@@ -23,9 +29,6 @@
             /* Ekran genişliği 390 pikselden küçükse, aşağıdaki stil kuralları uygulanır */
             body {
                 font-size: 14px; /* Metin boyutunu küçültebilirsiniz */
-            }
-            spline-viewer {
-                margin: 5px; /* Kenar boşluklarını daha küçük yapabilirsiniz */
             }
         }
     </style>
