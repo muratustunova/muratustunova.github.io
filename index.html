@@ -23,7 +23,7 @@
         /* Yatay (landscape) ekran görünümü için stil kuralları */
         @media (max-width: 768px) and (orientation: landscape) {
             body {
-                transform: rotate(90deg); /* Sayfayı 90 derece döndürür */
+                transform: rotate(90deg) scale(1.2); /* Sayfayı 90 derece döndürür ve görüntüyü biraz uzaklaştırır */
                 transform-origin: left top; /* Dönme noktasını sol üst köşeye ayarlar */
                 width: 100vh; /* Sayfanın yüksekliğini ekranın genişliği kadar yapar */
                 height: 100vw; /* Sayfanın genişliğini ekranın yüksekliği kadar yapar */
@@ -33,7 +33,7 @@
             }
         }
 
-        /* Mobil cihazlar için metya sorgusu */
+        /* Mobil cihazlar için medya sorgusu */
         @media (max-width: 768px) {
             /* Ekran genişliği 768 pikselden küçükse, aşağıdaki stil kuralları uygulanır */
             body {
