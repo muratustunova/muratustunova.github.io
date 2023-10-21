@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spline Viewer Example</title>
     <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.486/build/spline-viewer.js"></script>
     <style>
@@ -11,44 +11,38 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #f0f0f0; /* Arka plan rengini belirleyebilirsiniz */
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-        .container {
-            width: 100vw; /* Ekran genişliği kadar */
-            height: 100vh; /* Ekran yüksekliği kadar */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden; /* Taşan içeriği gizler */
+            height: 100vh; /* Sayfa yüksekliğini ekranın yüksekliği kadar yapar */
         }
         spline-viewer {
-            width: 100%; /* Tam genişlik */
-            height: 100%; /* Tam yükseklik */
+            flex-grow: 1; /* Spline viewer'ı ekranın geri kalan alanını dolduracak şekilde genişletir */
         }
 
-        /* Mobil cihazlar için medya sorgusu */
-        @media (max-width: 768px) {
+        /* Yatay (landscape) ekran görünümü için stil kuralları */
+        @media (max-width: 768px) and (orientation: landscape) {
             body {
-                font-size: 16px;
+                transform: rotate(90deg); /* Sayfayı 90 derece döndürür */
+                transform-origin: left top; /* Dönme noktasını sol üst köşeye ayarlar */
+                width: 100vh; /* Sayfanın yüksekliğini ekranın genişliği kadar yapar */
+                height: 100vw; /* Sayfanın genişliğini ekranın yüksekliği kadar yapar */
+                position: fixed; /* Sayfanın sabit bir konumda kalmasını sağlar */
+                left: 0; /* Sayfanın sol üst köşeye yerleşmesini sağlar */
+                top: 0;
+            }
+        }
+
+        /* Mobil cihazlar için metya sorgusu */
+        @media (max-width: 768px) {
+            /* Ekran genişliği 768 pikselden küçükse, aşağıdaki stil kuralları uygulanır */
+            body {
+                font-size: 16px; /* Metin boyutunu artırabilirsiniz */
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <spline-viewer url="https://prod.spline.design/iWdISso2bDNqSSVw/scene.splinecode"></spline-viewer>
-    </div>
-
-    <script>
-        // Spline görüntüleyiciyi yatay ve dikey olarak tam ekran olarak ölçekleyin
-        const viewer = document.querySelector('spline-viewer');
-        const container = document.querySelector('.container');
-        viewer.style.transform = `scale(${Math.min(container.clientWidth / viewer.clientWidth, container.clientHeight / viewer.clientHeight)})`;
-    </script>
+    <spline-viewer url="https://prod.spline.design/iWdISso2bDNqSSVw/scene.splinecode"></spline-viewer>
 </body>
 </html>
