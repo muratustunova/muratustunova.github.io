@@ -16,11 +16,9 @@
             flex-direction: column;
             height: 100vh; /* Sayfa yüksekliğini ekranın yüksekliği kadar yapar */
         }
-
-        /* Kırpmak istediğiniz özel değeri ayarlayabilirsiniz */
-        spline-viewer {
+        #spline-container {
             flex-grow: 1;
-            margin-bottom: -20px; /* Alt kısmı 20 piksel kırpar (ayarlayabilirsiniz) */
+            background-color: white; /* Alt kısmı beyaz yapar */
         }
 
         /* Yatay (landscape) ekran görünümü için stil kuralları */
@@ -34,7 +32,7 @@
                 left: 0; /* Sayfanın sol üst köşeye yerleşmesini sağlar */
                 top: 0;
             }
-            spline-viewer {
+            #spline-container {
                 width: 100%; /* Spline viewer'ı ekranın tamamına sığdırmak için genişlik ayarı ekler */
                 height: 100%; /* Spline viewer'ı ekranın tamamına sığdırmak için yükseklik ayarı ekler */
             }
@@ -61,6 +59,8 @@
     </style>
 </head>
 <body>
-    <spline-viewer url="https://prod.spline.design/iWdISso2bDNqSSVw/scene.splinecode"></spline-viewer>
+    <div id="spline-container">
+        <spline-viewer url="https://prod.spline.design/iWdISso2bDNqSSVw/scene.splinecode"></spline-viewer>
+    </div>
 </body>
 </html>
