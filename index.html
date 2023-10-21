@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spline Viewer Example</title>
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.486/build/spline-viewer.js">
-    </script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.486/build/spline-viewer.js"></script>
     <style>
         /* Genel stil kuralları */
         body {
@@ -13,11 +12,12 @@
             margin: 0;
             padding: 0;
             background-color: #f0f0f0; /* Arka plan rengini belirleyebilirsiniz */
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Sayfa yüksekliğini ekranın yüksekliği kadar yapar */
         }
         spline-viewer {
-            width: 100%;
-            max-width: 100%; /* Ekranın genişliğine sığacak şekilde ayarla */
-            height: auto;
+            flex-grow: 1; /* Spline viewer'ı ekranın geri kalan alanını dolduracak şekilde genişletir */
         }
 
         /* Mobil cihazlar için medya sorgusu */
