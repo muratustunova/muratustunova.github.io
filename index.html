@@ -16,8 +16,11 @@
             flex-direction: column;
             height: 100vh; /* Sayfa yüksekliğini ekranın yüksekliği kadar yapar */
         }
+
+        /* Kırpmak istediğiniz özel değeri ayarlayabilirsiniz */
         spline-viewer {
-            flex-grow: 1; /* Spline viewer'ı ekranın geri kalan alanını dolduracak şekilde genişletir */
+            flex-grow: 1;
+            margin-bottom: -20px; /* Alt kısmı 20 piksel kırpar (ayarlayabilirsiniz) */
         }
 
         /* Yatay (landscape) ekran görünümü için stil kuralları */
