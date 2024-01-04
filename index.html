@@ -15,24 +15,28 @@
             display: flex;
             flex-direction: column;
             height: 100vh; /* Sayfa yüksekliğini ekranın yüksekliği kadar yapar */
+            overflow: hidden; /* Ekranın taşmasını önler */
         }
 
         #spline-container {
             flex-grow: 1;
             position: relative;
+            width: 100%; /* Ekranın tamamını kaplamak için genişlik ayarı */
+            height: 100%; /* Ekranın tamamını kaplamak için yükseklik ayarı */
         }
+
         #custom-overlay {
             position: absolute;
-            bottom: 1%; /* Alt kenardan uzaklığı yüzde (%) olarak ayarlayabilirsiniz */
-            right: 1%; /* Sağ kenardan uzaklığı yüzde (%) olarak ayarlayabilirsiniz */
-            width: 200px; /* Genişliği ayarlayabilirsiniz */
-            height: 60px; /* Yüksekliği ayarlayabilirsiniz */
-            background-color: rgb(0, 0, 0); /* Beyaz arka plan rengi */
+            bottom: 1%;
+            right: 1%;
+            width: 200px;
+            height: 60px;
+            background-color: rgb(0, 0, 0);
             z-index: 2;
-            border-radius: 15px; /* Çerçeve yumuşatma için değeri ayarlayabilirsiniz */
+            border-radius: 15px;
             display: flex;
-            justify-content: center; /* Metni yatayda ortalar */
-            align-items: center; /* Metni dikeyde ortalar */
+            justify-content: center;
+            align-items: center;
         }
 
         /* Siyah arka plan üzerine eklenen metin için stil kuralları */
@@ -46,12 +50,12 @@
         /* Yatay (landscape) ekran görünümü için stil kuralları */
         @media (max-width: 768px) and (orientation: landscape) {
             body {
-                transform: rotate(90deg); /* Sayfayı 90 derece döndürür */
-                transform-origin: left top; /* Dönme noktasını sol üst köşeye ayarlar */
-                width: 100vh; /* Sayfanın yüksekliğini ekranın genişliği kadar yapar */
-                height: 100vw; /* Sayfanın genişliğini ekranın yüksekliği kadar yapar */
-                position: fixed; /* Sayfanın sabit bir konumda kalmasını sağlar */
-                left: 0; /* Sayfanın sol üst köşeye yerleşmesini sağlar */
+                transform: rotate(90deg);
+                transform-origin: left top;
+                width: 100vh;
+                height: 100vw;
+                position: fixed;
+                left: 0;
                 top: 0;
             }
         }
@@ -60,14 +64,14 @@
         @media (max-width: 768px) {
             /* Ekran genişliği 768 pikselden küçükse, aşağıdaki stil kuralları uygulanır */
             body {
-                font-size: 16px; /* Metin boyutunu artırabilirsiniz */
+                font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
     <div id="spline-container">
-        <spline-viewer url="https://prod.spline.design/Cz4zc8AP0TTWe6Qt/scene.splinecode"></spline-viewer>
+        <spline-viewer url="https://prod.spline.design/p-alRfRLH2-qbe6F/scene.splinecode"></spline-viewer>
         <div id="custom-overlay"></div>
     </div>
 </body>
